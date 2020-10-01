@@ -1,10 +1,12 @@
 /**
  * 
  */
-package Tree;
+package tree;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.LinkedList;
-import java.util.List;
 import java.util.Queue;
 
 /**
@@ -22,56 +24,52 @@ public class BinaryTreeFromLinkedList {
 	/**
 	 * @param args
 	 */
-	public static void main(String[] args) {
-		Node1 head=new Node1(1);
-		head.next=new Node1(2);
-		Node1 node=head.next;
-		node.next=new Node1(3);
-		node.next.next=new Node1(4);
-		node.next.next.next=new Node1(5);
-		
+	public static void main(String[] args) throws ParseException {
+		Node1 head = new Node1(1);
+		head.next = new Node1(2);
+		Node1 node = head.next;
+		node.next = new Node1(3);
+		node.next.next = new Node1(4);
+		node.next.next.next = new Node1(5);
+
 	}
 
 	public static Tree convert(Node1 head, Tree node) {
 
-		Queue<Tree> queue=new LinkedList<>();
+		Queue<Tree> queue = new LinkedList<>();
 		if (head == null)
 			return null;
 		Tree parentNode = new Tree(head.data);
-		if(head.next!=null){
-		parentNode.left = new Tree(head.next.data);
-		queue.add(parentNode.left);
-		head=head.next;
+		if (head.next != null) {
+			parentNode.left = new Tree(head.next.data);
+			queue.add(parentNode.left);
+			head = head.next;
 		}
-		if(head.next!=null){
+		if (head.next != null) {
 			parentNode.right = new Tree(head.next.data);
 			queue.add(parentNode.right);
-			head=head.next.next;
+			head = head.next.next;
 		}
-		
-		
 
-		while (head != null &&!queue.isEmpty()) {
-			Tree currNode=queue.poll();
-		
-				currNode.left = new Tree(head.data);
-				queue.add(currNode.left);
-				head=head.next;
-				
-				if(head!=null){
-					currNode.right = new Tree(head.data);
-					queue.add(currNode.right);
-					head=head.next;
-				}
-				
-				
+		while (head != null && !queue.isEmpty()) {
+			Tree currNode = queue.poll();
+
+			currNode.left = new Tree(head.data);
+			queue.add(currNode.left);
+			head = head.next;
+
+			if (head != null) {
+				currNode.right = new Tree(head.data);
+				queue.add(currNode.right);
+				head = head.next;
+			}
 
 		}
-		
-		while(!queue.isEmpty()){
-			Tree currNode=queue.poll();
-			currNode.left=null;
-			currNode.right=null;
+
+		while (!queue.isEmpty()) {
+			Tree currNode = queue.poll();
+			currNode.left = null;
+			currNode.right = null;
 		}
 
 		return parentNode;

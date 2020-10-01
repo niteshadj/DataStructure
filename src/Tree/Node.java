@@ -1,7 +1,7 @@
 /**
  * 
  */
-package Tree;
+package tree;
 
 /**
  * @author nadjriya
@@ -11,11 +11,13 @@ package Tree;
  */
 public class Node {
 
-	int data;
-	Node left, right;
-	Node nextRight;
+	public int data;
+	public Node left, right;
+	public Node nextRight;
+	public int lCount;
+	public int rCount;
 
-	Node(int d) {
+	public Node(int d) {
 		this.data = d;
 	}
 

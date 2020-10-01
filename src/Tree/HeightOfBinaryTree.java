@@ -1,7 +1,7 @@
 /**
  * 
  */
-package Tree;
+package tree;
 
 /*
   @author nadjriya

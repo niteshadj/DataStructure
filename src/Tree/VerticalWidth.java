@@ -1,7 +1,7 @@
 /**
  * 
  */
-package Tree;
+package tree;
 
 /**
  * @author nadjriya
@@ -16,25 +16,28 @@ public class VerticalWidth {
 		// TODO Auto-generated method stub
 
 	}
-	
-	public static int verticalWidth(Node root)
-	{
+
+	static int minHd = Integer.MAX_VALUE;
+	static int maxHd = Integer.MIN_VALUE;
+
+	public static int verticalWidth(Node root) {
 		if(root==null)
 			return 0;
-		Node temp=root.left;
-		int count=0;
-		while(temp!=null){
-			count++;
-			temp=temp.left;
-		}
-		temp=root.right;
-		while(temp!=null){
-			count++;
-			temp=temp.right;
-		}
-		
-		return count+1;
-		
+		 minHd = Integer.MAX_VALUE;
+		 maxHd = Integer.MIN_VALUE;
+		calculateHorizontalDistance(root, 0);
+		return (maxHd - minHd + 1);
+
+	}
+
+	private static void calculateHorizontalDistance(Node root, int hd) {
+		if (root == null)
+			return;
+		minHd = Math.min(minHd, hd);
+		maxHd = Math.max(maxHd, hd);
+		calculateHorizontalDistance(root.left, hd - 1);
+		calculateHorizontalDistance(root.right, hd + 1);
+
 	}
 
 }

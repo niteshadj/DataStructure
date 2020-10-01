@@ -1,7 +1,7 @@
 /**
  * 
  */
-package Tree;
+package tree;
 
 import java.util.ArrayDeque;
 import java.util.ArrayList;

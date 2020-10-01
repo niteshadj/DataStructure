@@ -11,6 +11,10 @@ import java.util.Map;
 
 /**
  * @author nadjriya
+ * 
+ *         Given a keypad as shown in the diagram, and an N digit number which
+ *         is represented by array a[], the task is to list all words which are
+ *         possible by pressing these numbers.
  *
  */
 public class PhoneDigits {
@@ -22,7 +26,7 @@ public class PhoneDigits {
 	static List<String> possibleWords = new ArrayList<>();
 
 	public static void main(String[] args) {
-
+		possibleWords.clear();
 		alphabetsWithNumber.put(2, "abc");
 		alphabetsWithNumber.put(3, "def");
 		alphabetsWithNumber.put(4, "ghi");
@@ -33,14 +37,14 @@ public class PhoneDigits {
 		alphabetsWithNumber.put(8, "tuv");
 		alphabetsWithNumber.put(9, "wxyz");
 
-		int[] a = { 5 ,8, 8, 9, 8};
+		int[] a = { 5, 8, 8, 9, 8 };
 		possibleWords = new ArrayList<>();
-		 findPossibleWords(a,5,"");
-		 Collections.sort(possibleWords);
-		 System.out.println(possibleWords.size());
-		 for(String s:possibleWords){
-			 System.out.print(s+" ");
-		 }
+		findPossibleWords(a, 5, "");
+		Collections.sort(possibleWords);
+		System.out.println(possibleWords.size());
+		for (String s : possibleWords) {
+			System.out.print(s + " ");
+		}
 	}
 
 	private static void findPossibleWords(int[] a, int n, String s) {
@@ -50,11 +54,10 @@ public class PhoneDigits {
 			return;
 		}
 		if (alphabetsWithNumber.get(a[n - 1]).length() >= 4)
-			findPossibleWords(a, n - 1,  alphabetsWithNumber.get(a[n - 1]).charAt(3)+s);
-		findPossibleWords(a, n - 1,  alphabetsWithNumber.get(a[n - 1]).charAt(2)+s);
-		findPossibleWords(a, n - 1,alphabetsWithNumber.get(a[n - 1]).charAt(1)+s);
-		findPossibleWords(a, n - 1, alphabetsWithNumber.get(a[n - 1]).charAt(0)+s);
-		
+			findPossibleWords(a, n - 1, alphabetsWithNumber.get(a[n - 1]).charAt(3) + s);
+		findPossibleWords(a, n - 1, alphabetsWithNumber.get(a[n - 1]).charAt(2) + s);
+		findPossibleWords(a, n - 1, alphabetsWithNumber.get(a[n - 1]).charAt(1) + s);
+		findPossibleWords(a, n - 1, alphabetsWithNumber.get(a[n - 1]).charAt(0) + s);
 
 	}
 

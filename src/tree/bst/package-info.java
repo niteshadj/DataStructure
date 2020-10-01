@@ -5,4 +5,4 @@
  * @author nadjriya
  *
  */
-package tree;
+package tree.bst;
