@@ -4,7 +4,8 @@
 package linkedlist;
 
 /**
- * @author nadjriya Common node class for all programs
+ * @author nadjriya 
+ * Common node class for all programs
  *
  */
 class Node {

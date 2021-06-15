@@ -22,6 +22,9 @@ import java.util.Scanner;
  *         number of elements in A2[] are smaller than or equal to number of
  *         elements in A1[] and A2[] has all distinct elements. Note: Expected
  *         time complexity is O(N log(N)).
+ * 
+ *         N = 11 M = 4 A1[] = {2, 1, 2, 5, 7, 1, 9, 3, 6, 8, 8} A2[] = {2, 1,
+ *         8, 3} Output: 2 2 1 1 8 8 3 5 6 7 9
  *
  */
 public class RelativeSorting {
@@ -54,8 +57,7 @@ public class RelativeSorting {
 		}
 	}
 
-	
-	//work on other solution without comparator
+	// work on other solution without comparator
 	private static void sortRelativeToSecondArray(Integer[] a, int n, Integer[] b, int m) {
 
 		ArrayList<Integer> list = new ArrayList<>(Arrays.asList(a));
@@ -77,7 +79,7 @@ public class RelativeSorting {
 					b = rankingBySecondArray.get(i2);
 				if (rankingBySecondArray.get(i1) == null && rankingBySecondArray.get(i2) == null)
 					return i1.compareTo(i2);
-				return  a.compareTo(b);
+				return a.compareTo(b);
 			}
 		};
 		Collections.sort(list, relativeComparator);

@@ -12,6 +12,9 @@ import java.util.Scanner;
  *         Given an array of positive integers. Find the length of the longest
  *         sub-sequence such that elements in the subsequence are consecutive
  *         integers, the consecutive numbers can be in any order.
+ * 
+ *         Input: N = 7 a[] = {1,9,3,10,4,20,2} Output: 4 Explanation: 1, 2, 3,
+ *         4 is the longest consecutive subsequence.
  *
  */
 public class LongestConsecutiveSubsequence {
@@ -36,6 +39,7 @@ public class LongestConsecutiveSubsequence {
 		}
 	}
 
+	// check time complexity,how its O(n)
 	static int findLongestConseqSubseq(int arr[], int n) {
 		int ans = 1;
 		int j = 0;

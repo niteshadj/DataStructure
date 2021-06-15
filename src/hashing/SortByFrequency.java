@@ -4,13 +4,10 @@
 package hashing;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashMap;
 import java.util.Scanner;
-import java.util.stream.Collectors;
-import java.util.stream.IntStream;
 
 /**
  * @author nadjriya
@@ -75,8 +72,13 @@ public class SortByFrequency {
 			}
 
 		};
+	//	Comparator<Student> comp=(Student a,Student b)->{return  a.age.compareTo(b.age);};
 		Collections.sort(arrList, comparator);
 		return arrList;
 	}
 
+}
+
+class Student {
+	Integer age;
 }

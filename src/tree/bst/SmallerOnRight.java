@@ -64,6 +64,7 @@ public class SmallerOnRight {
 				int elem=list.get(i);
 				set.add(elem);
 				count=Math.max(count, set.headSet(elem).size());
+			//	count=findMaxCount(list);
 			}
 			System.out.println(count);
 
