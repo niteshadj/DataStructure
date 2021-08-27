@@ -12,7 +12,7 @@ public class BitDifference{
 	/**
 	 * @param args
 	 */
-	public static void maixor(String[] args) {
+	public static void main(String[] args) {
 		
 		System.out.print(countBitsFlip(10, 20));
 	}

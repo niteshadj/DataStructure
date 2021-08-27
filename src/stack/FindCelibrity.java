@@ -42,14 +42,10 @@ public class FindCelibrity {
 
 		int a = stack.pop();
 		for (int i = 0; i < n; i++) {
-			if (M[a][i] != 0)
+			if (i != a && M[i][a] != 1&& M[a][i] != 0)
 				return -1;
 		}
 
-		for (int i = 0; i < n; i++) {
-			if (i != a && M[i][a] != 1)
-				return -1;
-		}
 
 		return a;
 	}

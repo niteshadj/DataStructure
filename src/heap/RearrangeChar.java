@@ -17,13 +17,11 @@ import java.util.HashMap;
  * 
  *         Example 1:
  * 
- *         Input: S = geeksforgeeks Output: 1 Explanation: All the repeated
- *         characters of the given string can be rearranged so that no adjacent
- *         characters in the string is equal. Example 2:
+ *         Input: S = geeksforgeeks Output: 1 Explanation: egeskerskegof can be
+ *         one way of rearranging the letters.. Example 2:
  * 
- *         Input: S = bbbabaaacd Output: 1 Explanation: Repeated characters in
- *         the string cannot be rearranged such that there should not be any
- *         adjacent repeated character.
+ *         Input: S = bbbabaaacd Output: 1 Explanation: abababdcab can be one
+ *         way of rearranging the letters.
  *
  * 
  */
@@ -33,14 +31,13 @@ public class RearrangeChar {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
+		System.out.println(rearrangeCharacters("aab"));
 	}
 
 	static boolean rearrangeCharacters(String str) {
 
 		HashMap<Character, Integer> map = new HashMap<>();
-		int maxCharAllowed = (int) Math.ceil(str.length() / 2);
+		int maxCharAllowed = (int) Math.ceil((double)str.length() / 2);
 		for (int i = 0; i < str.length(); i++) {
 			map.put(str.charAt(i), map.get(str.charAt(i)) == null ? 1 : map.get(str.charAt(i)) + 1);
 		}

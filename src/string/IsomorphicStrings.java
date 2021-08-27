@@ -23,7 +23,7 @@ public class IsomorphicStrings {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		System.out.println(areIsomorphic("aab", "xyz"));
+		System.out.println(areIsomorphic("paper", "title"));
 	}
 
 	public static boolean areIsomorphic(String s1, String s2) {
